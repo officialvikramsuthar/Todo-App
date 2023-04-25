@@ -103,4 +103,13 @@ class TodoController extends Controller
         $todo->delete();
         return redirect('/');
     }
+    
+    
+    public function ajax_data(Todo $todo)
+    {
+        //
+        $todos = Todo::latest()->get();
+        return json_encode($todos->->toArray());
+    }
+}
 }
